@@ -30,7 +30,8 @@ namespace chess_bord
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-                  bool Black_pool = false;
+     
+            bool Black_pool = false;
             Pen pen = new Pen(Color.Black);
             Brush brush = new SolidBrush(Color.Black);
             Rectangle rect = new Rectangle();
@@ -50,6 +51,17 @@ namespace chess_bord
                         Black_pool = true;
                 }
                 Black_pool = !Black_pool;
+            }
+            Graphics gr = CreateGraphics(); SolidBrush br_ellipse = new SolidBrush(Color.Orange);
+            int n = 50;
+            for (int i = 1; i < 8; i++)
+            {
+                gr.FillEllipse(br_ellipse, n, 40, 40, 40);
+                n += 44;
+            }
+            n = 50; for (int i = 1; i < 8; i++)
+            {
+                gr.FillEllipse(br_ellipse, n, 320, 40, 40); n += 44;
             }
         }
     }
